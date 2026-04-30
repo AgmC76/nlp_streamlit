@@ -33,6 +33,20 @@ def processtxt(text):
     text = " ".join(lemmatized_words)
     st.write(text)
 
+def measure_polarity(text):
+    blob = textBlob(text)
+    sentiment_score = blob.sentiment.polarity
+    if result > 0:
+        custom_emoji = ':blush:'
+        st.success('Happy : {}'.format(custom_emoji))
+    elif result < 0:
+        custom_emoji = ':disappointed:'
+        st.warning('Sad : {}'.format(custom_emoji)
+    else:
+        custom_emoji = ':confused:'
+        st.info('Confused : {}'.format(custom_emoji))
+    st.success("Polarity Score is: {}".format(result))
 
 if st.button('Analyze'): # process when clicked
     processtxt(text)
+    measure_polarity(text)
