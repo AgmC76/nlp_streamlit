@@ -4,6 +4,9 @@ import nltk
 from nltk.stem.wordnet import WordNetLemmatizer
 from textblob import TextBlob
 import re
+import pandas as pd
+from sklearn.datasets import load_iris
+from sklearn.ensemble import RandomForestClassifier
 
 st.title("Assignment6")
 text = st.text_area("Enter something")
@@ -50,5 +53,27 @@ def measure_polarity(text):
 if st.button('Analyze'): # process when clicked
     processtxt(text)
     measure_polarity(text)
+
+# ------------------------ Part 2 ---------------------------------
+
+# Train a RandomForest Machine Learning model for the given dataset.
+# Cache data for efficient loading
+@st.cache_data
+def load_data():
+    iris = load_iris()
+    df = pd.DataFrame(iris.data, columns=iris.feature_names)
+    df["species"] = iris.target
+    return df, iris.target_names
+
+# Train RandomForest Classifier
+df, target_name = load_data()
+
+# Dataset for model training
+X = df.iloc[:, :-1]
+y = df["species"]
+
+# Model training for given dataset
+model = RandomForestClassifier()
+model.fit(X, y)
 
 # streamlit run nlp_app.py
