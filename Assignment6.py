@@ -13,6 +13,8 @@ text = st.text_area("Enter something")
 My name is jeff, i am going on a walk. Yesterday I walked five miles. 
 I have been wanting to get in shape, so I have been making a point to exercise regularly. 
 """
+# downloading the nltk wordset
+nltk.download('wordnet')
 
 def processtxt(text):    
     #Keeping only Text and digits
