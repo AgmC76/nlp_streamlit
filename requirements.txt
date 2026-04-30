@@ -3,4 +3,5 @@ streamlit
 textblob==0.20.0
 regex
 pandas
-sklearn
+sklearn.datasets
+sklearn.ensemble
