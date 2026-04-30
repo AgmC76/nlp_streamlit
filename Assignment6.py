@@ -4,6 +4,8 @@ import nltk
 from nltk.stem.wordnet import WordNetLemmatizer
 from textblob import TextBlob
 import re
+
+# part 2 imports
 import pandas as pd
 import sklearn
 from sklearn.datasets import load_iris
