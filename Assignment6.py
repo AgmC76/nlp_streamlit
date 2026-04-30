@@ -57,6 +57,8 @@ if st.button('Analyze'): # process when clicked
     processtxt(text)
     measure_polarity(text)
 
+# streamlit run nlp_app.py
+
 # ------------------------ Part 2 ---------------------------------
 
 # Train a RandomForest Machine Learning model for the given dataset.
@@ -119,4 +121,4 @@ with st.form("add_row_form"):
 st.write("Predicted species for tested samples:")
 st.dataframe(st.session_state.df)
 
-# streamlit run nlp_app.py
+
