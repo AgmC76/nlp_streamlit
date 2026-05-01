@@ -1,6 +1,3 @@
 nltk==3.9.2
 streamlit
 textblob==0.20.0
-regex
-pandas
-scikit-learn
